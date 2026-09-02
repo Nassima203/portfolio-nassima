@@ -1,3 +1,7 @@
+// Active les styles "reveal" seulement si le JS tourne réellement
+// (sinon le contenu reste visible par défaut, sans dépendre du script)
+document.documentElement.classList.add('js-ready');
+
 // Menu burger (mobile)
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
@@ -16,11 +20,57 @@ if (burger && navLinks) {
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 10) {
-    navbar.style.boxShadow = '0 4px 0 rgba(43,27,18,0.08)';
+    navbar.style.boxShadow = '0 10px 30px -18px rgba(43,46,59,0.35)';
   } else {
     navbar.style.boxShadow = 'none';
   }
 });
+
+// Respecte les préférences de mouvement réduit
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Révélation des sections au scroll (effet "la peinture se révèle")
+const revealEls = document.querySelectorAll('.reveal');
+
+if (prefersReducedMotion) {
+  revealEls.forEach(el => el.classList.add('is-visible'));
+} else if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('is-visible'));
+}
+
+// Parallax léger des taches d'aquarelle en arrière-plan
+const paintBlobs = Array.from(document.querySelectorAll('.paint-blob[data-speed]'));
+
+if (paintBlobs.length && !prefersReducedMotion) {
+  let ticking = false;
+
+  const updateParallax = () => {
+    const scrollY = window.scrollY;
+    paintBlobs.forEach(blob => {
+      const speed = parseFloat(blob.dataset.speed) || 0.15;
+      blob.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  });
+}
 
 // Formulaire de contact (envoi réel via FormSubmit.co, gratuit et sans inscription)
 const contactForm = document.getElementById('contactForm');

@@ -6,10 +6,21 @@
 <title>Nassima Adli — Développeuse Web Fullstack</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Caveat:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<!-- SVG filters used everywhere to give flat shapes an organic, hand-painted watercolor edge -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="wc-blob-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="55" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+</svg>
 
 <!-- ===== NAV BAR ===== -->
 <header class="navbar" id="navbar">
@@ -45,6 +56,8 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="accueil">
+  <div class="paint-blob pb-blue" data-speed="0.15" aria-hidden="true" style="top:-40px; left:-60px; width:340px; height:340px;"></div>
+  <div class="paint-blob pb-blush" data-speed="0.25" aria-hidden="true" style="top:60px; right:-80px; width:280px; height:280px;"></div>
   <div class="container hero-inner">
 
     <span class="badge-circle">
@@ -89,12 +102,12 @@
           <defs>
             <path id="badgeCircle" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
           </defs>
-          <circle cx="100" cy="100" r="98" fill="var(--white)" stroke="var(--border)" stroke-width="3"/>
+          <circle cx="100" cy="100" r="98" fill="var(--canvas)" stroke="var(--ink-faint)" stroke-width="3"/>
           <text>
             <textPath href="#badgeCircle" startOffset="0%">✳ ouverte aux opportunités ✳ ouverte aux opportunités ✳ ouverte aux opportunités</textPath>
           </text>
         </svg>
-        <span class="spin-badge-face">🙂</span>
+        <span class="spin-badge-face">🎨</span>
       </div>
 
     </div>
@@ -118,8 +131,10 @@
 
 <!-- ===== A PROPOS ===== -->
 <section class="about" id="apropos">
+  <div class="paint-blob pb-sage" data-speed="0.12" aria-hidden="true" style="top:10%; left:-100px; width:300px; height:300px;"></div>
+  <div class="paint-blob pb-gold" data-speed="0.2" aria-hidden="true" style="bottom:-60px; right:-80px; width:260px; height:260px;"></div>
   <div class="container">
-    <div class="about-panel">
+    <div class="about-panel reveal">
 
       <div class="about-copy">
         <p class="script-label">avant de continuer à scroller</p>
@@ -137,7 +152,7 @@
       <div class="about-visual">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
-        <span class="doodle doodle-1">🧠</span>
+        <span class="doodle doodle-1">🖌️</span>
         <span class="doodle doodle-2">💡</span>
         <span class="doodle doodle-3">⚙️</span>
         <span class="doodle doodle-4">🎨</span>
@@ -155,11 +170,13 @@
 <!-- ===== COMPETENCES ===== -->
 <section class="skills" id="competences">
   <div class="skills-panel">
+    <div class="paint-blob pb-plum" data-speed="0.1" aria-hidden="true" style="top:-40px; right:6%; width:220px; height:220px;"></div>
+    <div class="paint-blob pb-gold" data-speed="0.18" aria-hidden="true" style="bottom:-60px; left:2%; width:240px; height:240px;"></div>
     <div class="container">
-      <h2 class="section-title">Mes compétences</h2>
+      <h2 class="section-title reveal">Mes compétences</h2>
       <div class="skills-grid">
 
-        <article class="skill-card accent-pink">
+        <article class="skill-card accent-pink reveal">
           <span class="skill-icon">🎨</span>
           <p class="skill-kicker">Le socle créatif</p>
           <h3>Front-End &amp; 3D</h3>
@@ -170,7 +187,7 @@
           </ul>
         </article>
 
-        <article class="skill-card accent-lime">
+        <article class="skill-card accent-lime reveal">
           <span class="skill-icon">🗄️</span>
           <p class="skill-kicker">Le moteur logique</p>
           <h3>Back-End, Data &amp; APIs</h3>
@@ -181,7 +198,7 @@
           </ul>
         </article>
 
-        <article class="skill-card accent-lav">
+        <article class="skill-card accent-lav reveal">
           <span class="skill-icon">🛍️</span>
           <p class="skill-kicker">L'oeil design</p>
           <h3>UI/UX Design &amp; E-commerce</h3>
@@ -192,7 +209,7 @@
           </ul>
         </article>
 
-        <article class="skill-card accent-yellow">
+        <article class="skill-card accent-yellow reveal">
           <span class="skill-icon">⚙️</span>
           <p class="skill-kicker">L'automatisation</p>
           <h3>DevOps &amp; Automatisation</h3>
@@ -210,13 +227,14 @@
 
 <!-- ===== PROJETS ===== -->
 <section class="projects" id="projets">
+  <div class="paint-blob pb-sage" data-speed="0.14" aria-hidden="true" style="top:4%; right:-90px; width:280px; height:280px;"></div>
   <div class="container">
-    <p class="script-label center">mes réalisations</p>
-    <h2 class="section-title center">Projets</h2>
+    <p class="script-label center reveal">mes réalisations</p>
+    <h2 class="section-title center reveal">Projets</h2>
 
     <div class="projects-grid">
 
-      <article class="project-card">
+      <article class="project-card reveal">
         <div class="project-img"><span class="project-emoji">📚</span><img src="images/projects/wiki-learn.jpg" alt="Capture d'écran de l'interface mobile de Wiki Learn" onerror="this.style.display='none'"></div>
         <div class="project-body">
           <h3>Wiki Learn</h3>
@@ -229,7 +247,7 @@
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card reveal">
         <div class="project-img"><span class="project-emoji">👻</span><img src="images/projects/explorateur-3d.jpg" alt="Rendu de la scène 3D de la pièce d'horreur" onerror="this.style.display='none'"></div>
         <div class="project-body">
           <h3>Explorateur Immersif WebGL</h3>
@@ -242,7 +260,7 @@
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card reveal">
         <div class="project-img"><span class="project-emoji">🧬</span><img src="images/projects/stk-cyanofold.jpg" alt="Aperçu du design cyanotype/blueprint de STK CyanoFold" onerror="this.style.display='none'"></div>
         <div class="project-body">
           <h3>STK CyanoFold</h3>
@@ -255,7 +273,7 @@
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card reveal">
         <div class="project-img"><span class="project-emoji">👟</span><img src="images/projects/foot-locker.jpg" alt="Maquette Figma de l'interface Foot Locker" onerror="this.style.display='none'"></div>
         <div class="project-body">
           <h3>Foot Locker</h3>
@@ -268,7 +286,7 @@
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card reveal">
         <div class="project-img"><span class="project-emoji">📊</span><img src="images/projects/data-animes.jpg" alt="Graphique Matplotlib d'analyse de données animés" onerror="this.style.display='none'"></div>
         <div class="project-body">
           <h3>Data Analysis &amp; Feature Engineering</h3>
@@ -280,7 +298,7 @@
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card reveal">
         <div class="project-img"><span class="project-emoji">💎</span><img src="images/projects/solvea.jpg" alt="Page d'accueil de la boutique Shopify Solvea" onerror="this.style.display='none'"></div>
         <div class="project-body">
           <h3>Solvea</h3>
@@ -292,7 +310,7 @@
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card reveal">
         <div class="project-img"><span class="project-emoji">🖼️</span><img src="images/projects/moodboard-creator.jpg" alt="Aperçu de l'outil Moodboard Creator" onerror="this.style.display='none'"></div>
         <div class="project-body">
           <h3>Moodboard Creator</h3>
@@ -305,7 +323,7 @@
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card reveal">
         <div class="project-img"><span class="project-emoji">🧭</span><img src="images/projects/nomad-palette.jpg" alt="Aperçu de la landing page Webflow Nomad Palette" onerror="this.style.display='none'"></div>
         <div class="project-body">
           <h3>Nomad Palette</h3>
@@ -323,8 +341,13 @@
 
 <!-- ===== CONTACT ===== -->
 <section class="contact" id="contact">
+  <svg class="wave-divider" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,32 C150,70 350,0 500,38 C650,76 800,8 1000,36 C1100,50 1150,24 1200,40 L1200,80 L0,80 Z" fill="var(--night)"></path>
+  </svg>
+  <div class="paint-blob pb-gold on-night" data-speed="0.1" aria-hidden="true" style="top:-40px; right:8%; width:320px; height:320px;"></div>
+  <div class="paint-blob pb-blue on-night" data-speed="0.16" aria-hidden="true" style="bottom:-60px; left:-60px; width:260px; height:260px;"></div>
   <div class="container contact-inner">
-    <div class="contact-info">
+    <div class="contact-info reveal">
       <p class="script-label">restons en contact</p>
       <h2 class="section-title">Travaillons ensemble !</h2>
       <p>Vous avez un projet en tête ou une opportunité à proposer ? N'hésitez pas à m'envoyer un message.</p>
@@ -341,7 +364,7 @@
       </div>
     </div>
 
-    <form class="contact-form" id="contactForm" data-endpoint="https://formsubmit.co/ajax/nassimaadli777@gmail.com">
+    <form class="contact-form reveal" id="contactForm" data-endpoint="https://formsubmit.co/ajax/nassimaadli777@gmail.com">
       <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
