@@ -54,7 +54,7 @@ if (cvBtn) {
 
     const link = document.createElement('a');
     link.href = CV_URL;
-    link.download = 'Nassima-Adli-CV.pdf';
+    link.download = 'Nassima-Adli-CV.docx';
     document.body.appendChild(link);
     link.click();
     link.remove();
