@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nassima Adli — Carte digitale</title>
+<meta name="description" content="Carte de visite digitale de Nassima Adli : photo, QR code vers le portfolio et téléchargement du CV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Caveat:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/carte.css">
+</head>
+<body class="dc-body">
+
+<!-- SVG filter reused from the main site for the watercolor blobs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="wc-blob-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="55" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+</svg>
+
+<main class="dc-page">
+  <div class="paint-blob pb-blue" aria-hidden="true" style="top:-60px; left:-80px; width:280px; height:280px;"></div>
+  <div class="paint-blob pb-blush" aria-hidden="true" style="bottom:-60px; right:-70px; width:260px; height:260px;"></div>
+
+  <a href="index.html" class="dc-back">← Retour au portfolio</a>
+
+  <section class="dc-card">
+    <p class="script-label center">carte de visite digitale</p>
+
+    <div class="dc-photo">
+      <img src="photo.jpeg" alt="Portrait de Nassima Adli" onerror="this.style.display='none'">
+      <span class="dc-photo-fallback">NA</span>
+    </div>
+
+    <h1 class="dc-name">Nassima Adli</h1>
+    <p class="dc-role">Développeuse Web <span class="highlight">Fullstack</span></p>
+
+    <div class="dc-socials">
+      <a href="mailto:nassimaadli777@gmail.com" aria-label="Gmail" class="icon-btn">
+        <svg viewBox="0 0 24 24"><path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11A2.5 2.5 0 0 1 19.5 20h-15A2.5 2.5 0 0 1 2 17.5v-11Zm2.2.3 7.4 5.6a.8.8 0 0 0 .8 0l7.4-5.6H4.2Zm15.6 1.4-7 5.3a2.8 2.8 0 0 1-3.6 0l-7-5.3v9.3c0 .28.22.5.5.5h15c.28 0 .5-.22.5-.5V8.2Z"/></svg>
+      </a>
+      <a href="https://github.com/Nassima203/" target="_blank" rel="noopener" aria-label="GitHub" class="icon-btn">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5v-1.9c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.34 1.12 2.92.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.13-4.56-5.02 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.72 0 0 .84-.28 2.75 1.04a9.4 9.4 0 0 1 5 0c1.9-1.32 2.75-1.04 2.75-1.04.55 1.42.2 2.46.1 2.72.64.71 1.03 1.62 1.03 2.73 0 3.9-2.34 4.76-4.57 5.01.36.32.68.94.68 1.9v2.82c0 .28.18.61.69.5C19.14 20.62 22 16.77 22 12.25 22 6.58 17.52 2 12 2Z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/nassima-adli/" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon-btn">
+        <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm7 0h3.8v1.57h.05c.53-.98 1.83-2.02 3.77-2.02 4.03 0 4.78 2.58 4.78 5.93V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21h-3.98V9.5Z"/></svg>
+      </a>
+    </div>
+
+    <div class="dc-qr-wrap">
+      <canvas id="dcPortfolioQr" width="180" height="180" aria-label="QR code vers le portfolio de Nassima Adli"></canvas>
+      <p class="dc-qr-caption">Scannez pour ouvrir mon portfolio</p>
+    </div>
+
+    <div class="dc-actions">
+      <a href="index.html" class="btn btn-primary btn-sm">🌐 Voir le portfolio</a>
+      <button type="button" id="dcCvBtn" class="btn btn-outline btn-sm" data-cv-url="cv/Nassima-Adli-CV.pdf">📄 Télécharger le CV</button>
+    </div>
+
+    <div class="dc-cv-qr" id="dcCvQrWrap" hidden>
+      <canvas id="dcCvQr" width="140" height="140" aria-label="QR code pour télécharger le CV"></canvas>
+      <p class="dc-qr-caption">Ou scannez pour le télécharger sur votre téléphone</p>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js" defer></script>
+<script src="js/carte.js" defer></script>
+</body>
+</html>

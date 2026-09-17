@@ -1,0 +1,147 @@
+/* ============================================
+   CARTE DIGITALE — page autonome (photo + QR + CV)
+   Réutilise les variables et boutons de style.css
+============================================ */
+
+.dc-body{
+  min-height: 100vh;
+}
+
+.dc-page{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+}
+
+.dc-back{
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  z-index: 2;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  transition: color .2s ease, transform .2s ease;
+}
+.dc-back:hover{ color: var(--ink); transform: translateX(-4px); }
+
+.dc-card{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  background: var(--canvas);
+  border: 1.5px solid var(--ink-faint);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft-lg);
+  padding: 40px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.script-label.center{ text-align:center; margin: 0 0 4px; }
+
+.dc-photo{
+  position: relative;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--canvas);
+  box-shadow: var(--shadow-soft), 0 0 0 3px var(--wc-blush);
+  background: var(--wc-sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dc-photo img{ width:100%; height:100%; object-fit: cover; }
+.dc-photo-fallback{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--canvas);
+  z-index: -1;
+}
+
+.dc-name{
+  font-size: 1.7rem;
+  margin: 4px 0 0;
+}
+.dc-role{
+  font-family: var(--font-sans);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.dc-socials{
+  display: flex;
+  gap: 10px;
+  margin: 6px 0;
+}
+
+.dc-qr-wrap{
+  margin-top: 10px;
+  padding: 16px;
+  background: var(--paper);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--ink-faint);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.dc-qr-wrap canvas{
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+}
+.dc-qr-caption{
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.dc-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 6px;
+}
+.dc-actions .btn{ white-space: normal; }
+
+.dc-cv-qr{
+  margin-top: 4px;
+  padding: 14px;
+  background: var(--paper);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--ink-faint);
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.dc-cv-qr.is-open{ display: flex; }
+.dc-cv-qr canvas{
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 480px){
+  .dc-card{ padding: 32px 22px; }
+  .dc-actions{ flex-direction: column; width: 100%; }
+  .dc-actions .btn{ width: 100%; }
+}

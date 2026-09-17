@@ -908,6 +908,21 @@ html.js-ready .reveal.is-visible{
 .footer .icon-btn svg{ fill: var(--paper); }
 .footer .icon-btn:hover{ background: var(--wc-blue); border-color: var(--wc-blue); }
 .footer .icon-btn:hover svg{ fill: var(--ink); }
+.footer-card-link{
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--paper-alt);
+  border: 1.5px solid rgba(251,246,234,0.2);
+  border-radius: 999px;
+  padding: 8px 18px;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.footer-card-link:hover{
+  background: var(--wc-blue);
+  border-color: var(--wc-blue);
+  color: var(--ink);
+}
 .footer-copy{
   font-family: var(--font-sans);
   font-size: 0.78rem;
