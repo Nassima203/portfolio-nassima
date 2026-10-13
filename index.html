@@ -51,7 +51,16 @@
   <div class="nav-right">
     <a href="https://github.com/Nassima203" target="_blank" rel="noopener">GitHub</a>
     <a href="https://www.linkedin.com/in/nassima-adli-60a78135b/" target="_blank" rel="noopener">LinkedIn</a>
-    <span class="lang">FR</span>
+    <div class="lang-switch" id="langSwitch">
+      <button class="lang-btn" id="langBtn" type="button" aria-label="Changer de langue" aria-expanded="false" aria-controls="langMenu">
+        <span id="langCurrent">FR</span>
+        <svg class="lang-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="lang-menu" id="langMenu">
+        <li><button type="button" data-lang="fr" aria-pressed="true"><span>FR</span> Français</button></li>
+        <li><button type="button" data-lang="en" aria-pressed="false"><span>EN</span> English</button></li>
+      </ul>
+    </div>
   </div>
 
   <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
@@ -395,6 +404,7 @@
 
 </div>
 
+<script src="js/i18n.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

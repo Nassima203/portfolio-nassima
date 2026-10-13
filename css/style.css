@@ -96,7 +96,74 @@ ul, ol { list-style: none; }
 
 .nav-links a:hover::after, .nav-right a:hover::after { transform: scaleX(1); }
 
-.lang { font-weight: 500; }
+/* ===== SÉLECTEUR DE LANGUE ===== */
+.lang-switch { position: relative; }
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 8px 6px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  font: 500 12px/1 var(--font);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background .25s ease;
+}
+
+.lang-btn:hover, .lang-switch.open .lang-btn { background: var(--lavender); }
+
+.lang-chevron {
+  width: 14px; height: 14px;
+  transition: transform .35s var(--ease-out);
+}
+
+.lang-btn[aria-expanded="true"] .lang-chevron { transform: rotate(180deg); }
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 140px;
+  padding: 5px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 3px 3px 0 var(--ink);
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 -6px;
+  transition: opacity .2s ease, translate .3s var(--ease-out), visibility .2s;
+}
+
+.lang-switch.open .lang-menu { opacity: 1; visibility: visible; translate: none; }
+
+.lang-menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  font: 13px var(--font);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.lang-menu button span { font-weight: 500; font-size: 11px; color: var(--muted); }
+.lang-menu button:hover { background: var(--lavender); }
+.lang-menu button[aria-pressed="true"] { font-weight: 600; }
+.lang-menu button[aria-pressed="true"]::after { content: '✓'; margin-left: auto; }
+
+/* Fondu bref pendant le changement de langue */
+.sheet main, .sheet .footer { transition: opacity .18s ease; }
+.sheet.lang-fade main, .sheet.lang-fade .footer { opacity: 0; }
 
 .burger {
   display: none;

@@ -6,7 +6,7 @@ if (burger && navLinks) {
   const setMenu = (open) => {
     navLinks.classList.toggle('open', open);
     burger.setAttribute('aria-expanded', String(open));
-    burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    burger.setAttribute('aria-label', t(open ? 'Fermer le menu' : 'Ouvrir le menu'));
   };
 
   burger.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
@@ -140,7 +140,7 @@ if (contactForm) {
     const endpoint = contactForm.dataset.endpoint;
 
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Envoi en cours...';
+    submitBtn.firstChild.data = t('Envoi en cours...');
     formStatus.textContent = '';
     formStatus.classList.remove('success', 'error');
 
@@ -152,18 +152,18 @@ if (contactForm) {
       });
 
       if (response.ok) {
-        formStatus.textContent = 'Merci ! Votre message a bien été envoyé, je vous répondrai rapidement.';
+        formStatus.textContent = t('Merci ! Votre message a bien été envoyé, je vous répondrai rapidement.');
         formStatus.classList.add('success');
         contactForm.reset();
       } else {
         throw new Error('Réponse non valide du serveur');
       }
     } catch (err) {
-      formStatus.textContent = 'Une erreur est survenue. Merci de réessayer ou de m\'écrire directement par e-mail.';
+      formStatus.textContent = t('Une erreur est survenue. Merci de réessayer ou de m\'écrire directement par e-mail.');
       formStatus.classList.add('error');
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Envoyer le message';
+      submitBtn.firstChild.data = t('Envoyer le message');
     }
   });
 }
