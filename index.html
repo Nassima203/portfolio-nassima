@@ -6,408 +6,372 @@
 <title>Nassima Adli — Développeuse Web Fullstack</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<!-- Étoile réutilisable -->
+<!-- Icônes réutilisables -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="sparkle" viewBox="0 0 24 24"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z"/></symbol>
-  <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="check" viewBox="0 0 24 24"><path d="m6 12.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <!-- Aquarelle : bords déformés par un bruit fluide, adoucis, puis texturés par le grain du papier -->
+  <filter id="aquarelle" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="7" result="flow"/>
+    <feDisplacementMap in="SourceGraphic" in2="flow" scale="80" xChannelSelector="R" yChannelSelector="G" result="spread"/>
+    <feGaussianBlur in="spread" stdDeviation="5" result="soft"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="3" result="grain"/>
+    <feColorMatrix in="grain" type="saturate" values="0" result="paper"/>
+    <feComposite in="soft" in2="paper" operator="arithmetic" k1="0.45" k2="0.75" k3="0" k4="0"/>
+  </filter>
+  <!-- Même aquarelle à plus petite échelle, pour les boutons -->
+  <filter id="aquarelle-sm" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="11" result="flow"/>
+    <feDisplacementMap in="SourceGraphic" in2="flow" scale="22" xChannelSelector="R" yChannelSelector="G" result="spread"/>
+    <feGaussianBlur in="spread" stdDeviation="2" result="soft"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="3" result="grain"/>
+    <feColorMatrix in="grain" type="saturate" values="0" result="paper"/>
+    <feComposite in="soft" in2="paper" operator="arithmetic" k1="0.45" k2="0.75" k3="0" k4="0"/>
+  </filter>
 </svg>
+
+<p class="page-meta">portfolio développeuse<br>@nassima203</p>
+
+<div class="sheet">
 
 <!-- ===== NAV BAR ===== -->
 <header class="navbar" id="navbar">
-  <div class="container">
-    <div class="navbar-inner">
-      <a href="#accueil" class="logo">Nassima<span>.</span>Adli</a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#apropos">À propos</a>
+    <a href="#competences">Compétences</a>
+    <a href="#projets">Projets</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-      <nav class="nav-links" id="navLinks">
-        <a href="#apropos">À propos</a>
-        <a href="#competences">Compétences</a>
-        <a href="#projets">Projets</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="nav-socials">
-        <a href="mailto:nassimaadli777@gmail.com" aria-label="Gmail" class="icon-btn">
-          <svg viewBox="0 0 24 24"><path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11A2.5 2.5 0 0 1 19.5 20h-15A2.5 2.5 0 0 1 2 17.5v-11Zm2.2.3 7.4 5.6a.8.8 0 0 0 .8 0l7.4-5.6H4.2Zm15.6 1.4-7 5.3a2.8 2.8 0 0 1-3.6 0l-7-5.3v9.3c0 .28.22.5.5.5h15c.28 0 .5-.22.5-.5V8.2Z"/></svg>
-        </a>
-        <a href="https://github.com/Nassima203" target="_blank" rel="noopener" aria-label="GitHub" class="icon-btn">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5v-1.9c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.34 1.12 2.92.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.13-4.56-5.02 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.72 0 0 .84-.28 2.75 1.04a9.4 9.4 0 0 1 5 0c1.9-1.32 2.75-1.04 2.75-1.04.55 1.42.2 2.46.1 2.72.64.71 1.03 1.62 1.03 2.73 0 3.9-2.34 4.76-4.57 5.01.36.32.68.94.68 1.9v2.82c0 .28.18.61.69.5C19.14 20.62 22 16.77 22 12.25 22 6.58 17.52 2 12 2Z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/nassima-adli-60a78135b/" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon-btn">
-          <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm7 0h3.8v1.57h.05c.53-.98 1.83-2.02 3.77-2.02 4.03 0 4.78 2.58 4.78 5.93V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21h-3.98V9.5Z"/></svg>
-        </a>
-      </div>
-
-      <a href="#contact" class="btn btn-yellow btn-nav">Me contacter</a>
-
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <div class="nav-right">
+    <a href="https://github.com/Nassima203" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/nassima-adli-60a78135b/" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="lang">FR</span>
   </div>
+
+  <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span>
+  </button>
 </header>
 
 <main>
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="accueil">
-  <div class="container hero-inner">
-
-    <h1 class="hero-title reveal">Je transforme vos idées en <span class="hero-accent">expériences web</span></h1>
-    <p class="hero-subtitle reveal">Développeuse web fullstack — du prototype à la mise en ligne, de l'interface à la donnée qui la fait vivre :)</p>
-
-    <div class="hero-cta reveal">
-      <a href="#projets" class="btn btn-yellow">Découvrir mes projets <svg class="btn-ico"><use href="#arrow"/></svg></a>
-      <a href="#contact" class="btn btn-white">Me contacter</a>
+  <div class="hero-copy reveal">
+    <h1 class="hero-name">Nassima Adli</h1>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-dark">Me contacter</a>
+      <span class="pill-tilt">Développeuse web fullstack</span>
     </div>
+    <p class="hero-title">Je transforme vos idées en expériences web</p>
+    <p class="hero-subtitle">Du prototype à la mise en ligne, de l'interface à la donnée qui la fait vivre :)</p>
+    <p class="hero-status"><span class="dot"></span>Disponible pour un nouveau projet !</p>
+  </div>
 
-    <div class="hero-collage">
-      <span class="bubble reveal">Disponible pour un nouveau projet !</span>
-      <svg class="sparkle sp-1" aria-hidden="true"><use href="#sparkle"/></svg>
-      <svg class="sparkle sp-2" aria-hidden="true"><use href="#sparkle"/></svg>
-
-      <div class="collage-card tilt-1 card-blue pop">
-        <p>Front-End &amp; 3D</p>
-        <small>React · Three.js · WebGL</small>
-      </div>
-
-      <div class="collage-card tilt-2 card-photo pop">
-        <img src="photo.jpeg" alt="Portrait de Nassima Adli, développeuse web fullstack" onerror="this.style.display='none'">
-        <span class="collage-fallback">NA</span>
-      </div>
-
-      <div class="collage-card tilt-3 card-yellow pop">
-        <p>Data &amp; API</p>
-        <small>Python · SQL · Supabase</small>
-      </div>
-
-      <div class="collage-card tilt-4 card-red pop">
-        <p>UI/UX Design</p>
-        <small>Figma · Design System</small>
-      </div>
-
-      <span class="smiley pop" aria-hidden="true">
-        <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18"/><circle cx="14" cy="16" r="2.4" class="f"/><circle cx="26" cy="16" r="2.4" class="f"/><path d="M12 23c2 4 5 5.5 8 5.5s6-1.5 8-5.5" class="s"/></svg>
-      </span>
-    </div>
+  <div class="hero-illu reveal">
+    <img src="images/illustration-bureau.jpg" alt="Illustration d'une développeuse aux cheveux bouclés travaillant sur son ordinateur, un café à côté">
   </div>
 </section>
 
-<!-- ===== TICKER ===== -->
-<div class="ticker-wrap" aria-hidden="true">
-  <div class="ticker">
-    <div class="ticker-track">
-      <span>Développeuse fullstack</span><svg class="dot"><use href="#sparkle"/></svg>
-      <span>UI/UX &amp; 3D</span><svg class="dot"><use href="#sparkle"/></svg>
-      <span>Data &amp; automatisation</span><svg class="dot"><use href="#sparkle"/></svg>
-      <span>Développeuse fullstack</span><svg class="dot"><use href="#sparkle"/></svg>
-      <span>UI/UX &amp; 3D</span><svg class="dot"><use href="#sparkle"/></svg>
-      <span>Data &amp; automatisation</span><svg class="dot"><use href="#sparkle"/></svg>
-      <span>Développeuse fullstack</span><svg class="dot"><use href="#sparkle"/></svg>
-      <span>UI/UX &amp; 3D</span><svg class="dot"><use href="#sparkle"/></svg>
-      <span>Data &amp; automatisation</span><svg class="dot"><use href="#sparkle"/></svg>
-      <span>Développeuse fullstack</span><svg class="dot"><use href="#sparkle"/></svg>
-      <span>UI/UX &amp; 3D</span><svg class="dot"><use href="#sparkle"/></svg>
-      <span>Data &amp; automatisation</span><svg class="dot"><use href="#sparkle"/></svg>
-    </div>
+<!-- ===== CARROUSEL DES TECHNOS ===== -->
+<section class="marquee" aria-label="Technologies utilisées dans mes projets">
+  <div class="marquee-row">
+    <ul class="marquee-track marquee-pills"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Vite</li><li>Tailwind CSS</li><li>Three.js</li><li>WebGL</li><li>Blender</li><li>Figma</li><li>Node.js</li><li>Express</li><li>Python</li><li>FastAPI</li><li>SQL</li><li>PostgreSQL</li><li>Supabase</li><li>SQLite</li><li>libSQL</li><li>API REST</li><li>SQLModel</li><li>Pydantic</li><li>Auth JWT &amp; OAuth</li><li>bcrypt</li><li>Pandas</li><li>Matplotlib</li><li>Jupyter</li><li>pytest</li><li>Vitest</li><li>React Testing Library</li><li>GitHub Actions</li><li>Vercel</li><li>Render</li><li>Shopify</li><li>Webflow</li><li>Make</li><li>Airtable</li><li>Webhooks</li><li>SEO</li><li>Google Analytics 4</li></ul>
+    <ul class="marquee-track marquee-pills" aria-hidden="true"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Vite</li><li>Tailwind CSS</li><li>Three.js</li><li>WebGL</li><li>Blender</li><li>Figma</li><li>Node.js</li><li>Express</li><li>Python</li><li>FastAPI</li><li>SQL</li><li>PostgreSQL</li><li>Supabase</li><li>SQLite</li><li>libSQL</li><li>API REST</li><li>SQLModel</li><li>Pydantic</li><li>Auth JWT &amp; OAuth</li><li>bcrypt</li><li>Pandas</li><li>Matplotlib</li><li>Jupyter</li><li>pytest</li><li>Vitest</li><li>React Testing Library</li><li>GitHub Actions</li><li>Vercel</li><li>Render</li><li>Shopify</li><li>Webflow</li><li>Make</li><li>Airtable</li><li>Webhooks</li><li>SEO</li><li>Google Analytics 4</li></ul>
   </div>
-</div>
+</section>
 
 <!-- ===== A PROPOS ===== -->
-<section class="about" id="apropos">
-  <div class="container">
-    <div class="panel about-panel reveal">
+<section class="section" id="apropos">
+  <h2 class="label reveal">(à propos)</h2>
 
-      <div class="about-visual">
-        <svg class="sparkle sp-3" aria-hidden="true"><use href="#sparkle"/></svg>
-        <svg class="sparkle sp-4" aria-hidden="true"><use href="#sparkle"/></svg>
-        <div class="about-photo">
-          <img src="photo.jpeg" alt="Portrait de Nassima Adli" onerror="this.style.display='none'">
-          <span class="about-photo-fallback">NA</span>
-        </div>
-        <span class="sticker sticker-green sticker-oval about-sticker">Code &amp; créa !</span>
-      </div>
+  <div class="about reveal">
+    <div class="about-photo">
+      <img src="photo.jpeg" alt="Portrait de Nassima Adli" onerror="this.style.display='none'">
+    </div>
 
-      <div class="about-copy">
-        <span class="sticker sticker-blue">à propos</span>
-        <h2 class="section-title left">Transformer le chaos en code !</h2>
-        <p class="lead">Avant de continuer à scroller, voici ce qui me fait avancer chaque jour.</p>
+    <div class="about-copy">
+      <h3 class="about-title">Transformer le chaos en code !</h3>
+      <p class="lead">Avant de continuer à scroller, voici ce qui me fait avancer chaque jour.</p>
 
-        <ul class="check-list">
-          <li><span class="check-ico"><svg><use href="#check"/></svg></span> Développement web du prototype jusqu'au déploiement</li>
-          <li><span class="check-ico"><svg><use href="#check"/></svg></span> Rigueur et réactivité au service de projets innovants</li>
-          <li><span class="check-ico"><svg><use href="#check"/></svg></span> Curiosité créative pour explorer sans cesse de nouveaux outils</li>
-        </ul>
-
-        <a href="#projets" class="btn btn-yellow btn-sm">Voir mes projets</a>
-      </div>
-
+      <ol class="about-list">
+        <li>Développement web du prototype jusqu'au déploiement</li>
+        <li>Rigueur et réactivité au service de projets innovants</li>
+        <li>Curiosité créative pour explorer sans cesse de nouveaux outils</li>
+      </ol>
     </div>
   </div>
 </section>
 
 <!-- ===== COMPETENCES ===== -->
-<section class="skills" id="competences">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2 class="section-title">Mes <span class="title-sticker-wrap"><span class="sticker sticker-blue sticker-on-title">stack</span>compétences</span></h2>
-      <p class="section-sub">Quatre terrains de jeu, une seule obsession : livrer des produits qui marchent.</p>
-    </div>
+<section class="section" id="competences">
+  <h2 class="label reveal">(compétences)</h2>
+  <p class="section-sub reveal">Quatre terrains de jeu, une seule obsession : livrer des produits qui marchent.</p>
 
-    <div class="skills-grid">
+  <div class="card-grid">
 
-      <article class="skill-card skill-yellow reveal">
-        <p class="skill-kicker">Le socle créatif</p>
-        <h3>Front-End &amp; 3D</h3>
-        <p class="skill-desc">Interfaces réactives et expériences visuelles immersives.</p>
+    <article class="card reveal">
+      <h3 class="card-title">Front-End &amp; 3D</h3>
+      <div class="card-foot">
+        <p class="card-kicker">Le socle créatif</p>
+        <p>Interfaces réactives et expériences visuelles immersives.</p>
         <ul class="tag-list">
           <li>HTML5</li><li>CSS3</li><li>JavaScript ES6+</li><li>React.js</li>
           <li>Tailwind CSS</li><li>Three.js</li><li>WebGL</li><li>Animations CSS</li>
           <li>TypeScript</li><li>Vite</li><li>React Router</li>
         </ul>
-      </article>
+      </div>
+    </article>
 
-      <article class="skill-card skill-red reveal">
-        <p class="skill-kicker">Le moteur logique</p>
-        <h3>Back-End, Data &amp; APIs</h3>
-        <p class="skill-desc">Traitement, structuration et connexion des données.</p>
+    <article class="card reveal">
+      <h3 class="card-title">Back-End, Data &amp; APIs</h3>
+      <div class="card-foot">
+        <p class="card-kicker">Le moteur logique</p>
+        <p>Traitement, structuration et connexion des données.</p>
         <ul class="tag-list">
           <li>Python</li><li>Node.js</li><li>SQL</li><li>API REST</li>
           <li>JSON</li><li>Pandas</li><li>Matplotlib</li><li>Data Cleaning</li>
           <li>Express</li><li>Supabase</li><li>PostgreSQL</li><li>Auth JWT &amp; OAuth</li>
+          <li>FastAPI</li><li>SQLite</li><li>SQLModel</li><li>Pydantic</li>
         </ul>
-      </article>
+      </div>
+    </article>
 
-      <article class="skill-card skill-green reveal">
-        <p class="skill-kicker">L'oeil design</p>
-        <h3>UI/UX Design &amp; E-commerce</h3>
-        <p class="skill-desc">Du prototype au tunnel de conversion optimisé.</p>
+    <article class="card reveal">
+      <h3 class="card-title">UI/UX Design &amp; E-commerce</h3>
+      <div class="card-foot">
+        <p class="card-kicker">L'oeil design</p>
+        <p>Du prototype au tunnel de conversion optimisé.</p>
         <ul class="tag-list">
           <li>Figma</li><li>Design System</li><li>Blender</li><li>Shopify</li>
           <li>Webflow</li><li>SEO</li><li>Google Analytics 4</li>
         </ul>
-      </article>
+      </div>
+    </article>
 
-      <article class="skill-card skill-blue reveal">
-        <p class="skill-kicker">L'automatisation</p>
-        <h3>DevOps &amp; Automatisation</h3>
-        <p class="skill-desc">Déploiement continu et workflows automatisés.</p>
+    <article class="card reveal">
+      <h3 class="card-title">DevOps &amp; Automatisation</h3>
+      <div class="card-foot">
+        <p class="card-kicker">L'automatisation</p>
+        <p>Déploiement continu et workflows automatisés.</p>
         <ul class="tag-list">
           <li>Git</li><li>GitHub</li><li>GitHub Actions</li><li>Vercel</li>
           <li>VS Code</li><li>Make</li><li>Airtable</li><li>Webhooks</li>
-          <li>Render</li><li>Vitest</li><li>ESLint &amp; Prettier</li>
+          <li>Render</li><li>Vitest</li><li>pytest</li><li>ESLint &amp; Prettier</li>
         </ul>
-      </article>
+      </div>
+    </article>
 
-    </div>
+  </div>
+
+  <div class="center reveal">
+    <a href="#projets" class="btn btn-dark">Voir mes projets</a>
   </div>
 </section>
 
 <!-- ===== PROJETS ===== -->
-<section class="projects" id="projets">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2 class="section-title"><span class="title-sticker-wrap"><span class="sticker sticker-blue sticker-on-title">top picks</span>Mes projets</span></h2>
-      <p class="section-sub">Du site immersif en 3D à l'application fullstack : faites défiler pour tout voir.</p>
-    </div>
+<section class="section section-dark" id="projets">
+  <h2 class="label reveal">(projets)</h2>
+  <p class="section-sub reveal">Du site immersif en 3D à l'application fullstack.</p>
 
-    <div class="carousel reveal">
-      <button class="carousel-btn prev" type="button" aria-label="Projets précédents" data-dir="-1"><svg><use href="#arrow"/></svg></button>
+  <div class="card-grid card-grid-3">
 
-      <div class="projects-track" id="projectsTrack" tabindex="0" aria-label="Liste des projets">
-
-        <article class="project-card">
-          <div class="project-img"><span class="project-ph">Wiki Learn</span><img src="images/projects/wiki-learn.jpg" alt="Capture d'écran de l'interface mobile de Wiki Learn" loading="lazy" onerror="this.remove()"></div>
-          <div class="project-body">
-            <h3>Wiki Learn</h3>
-            <p class="project-sub">Plateforme d'apprentissage gamifiée</p>
-            <p>Développement mobile-first d'une application React transformant le contenu de Wikipedia en modules d'apprentissage interactifs. Implémentation d'une logique de gamification avec calcul d'XP, badges et progression par niveaux, le tout connecté à l'API REST Wikipedia avec un déploiement continu sur Vercel.</p>
-            <div class="project-links">
-              <a href="https://github.com/Nassima203/projet-hackathon" target="_blank" rel="noopener" class="btn btn-white btn-sm">GitHub</a>
-              <a href="https://projet-hackathon-six.vercel.app/" target="_blank" rel="noopener" class="btn btn-yellow btn-sm">Visiter le site</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-img"><span class="project-ph">WebGL 3D</span><img src="images/projects/explorateur-3d.jpg" alt="Rendu de la scène 3D de la pièce d'horreur" loading="lazy" onerror="this.remove()"></div>
-          <div class="project-body">
-            <h3>Explorateur Immersif WebGL</h3>
-            <p class="project-sub">Scène 3D interactive</p>
-            <p>Création d'une scène 3D immersive avec Three.js permettant d'explorer une pièce à la recherche d'indices liés à des films d'horreur. Modélisation des assets sur Blender, implémentation du raycasting pour la détection des clics, et optimisation des performances pour un affichage fluide à 60 FPS.</p>
-            <div class="project-links">
-              <a href="https://github.com/Nassima203/threejs-horreur" target="_blank" rel="noopener" class="btn btn-white btn-sm">GitHub</a>
-              <a href="https://threejs-horreur.vercel.app/" target="_blank" rel="noopener" class="btn btn-yellow btn-sm">Visiter le site</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-img"><span class="project-ph">CyanoFold</span><img src="images/projects/stk-cyanofold.jpg" alt="Aperçu du design cyanotype/blueprint de STK CyanoFold" loading="lazy" onerror="this.remove()"></div>
-          <div class="project-body">
-            <h3>STK CyanoFold</h3>
-            <p class="project-sub">Jeu sur l'architecture régénérative</p>
-            <p>Prototypage et implémentation sous React d'un jeu interactif d'association web sur le biomimétisme. Développement d'un moteur de jeu réactif avec gestion d'état local, animations CSS, et intégration de feedbacks audio/visuels immersifs.</p>
-            <div class="project-links">
-              <a href="https://github.com/Nassima203/projet_client_STK_Architecture" target="_blank" rel="noopener" class="btn btn-white btn-sm">GitHub</a>
-              <a href="https://stk-cyanofold.vercel.app/" target="_blank" rel="noopener" class="btn btn-yellow btn-sm">Visiter le site</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-img"><span class="project-ph">Foot Locker</span><img src="images/projects/foot-locker.jpg" alt="Maquette Figma de l'interface Foot Locker" loading="lazy" onerror="this.remove()"></div>
-          <div class="project-body">
-            <h3>Foot Locker</h3>
-            <p class="project-sub">Jeu Web « Instant-Gagnant »</p>
-            <p>Conception UI/UX sur Figma et développement responsive d'une interface fidèle à l'univers de la marque pour maximiser l'acquisition utilisateur. Intégration de la mécanique de tirage au sort en temps réel et création d'une bibliothèque de composants modulaires.</p>
-            <div class="project-links">
-              <a href="https://github.com/Nassima203/projet-footlocker" target="_blank" rel="noopener" class="btn btn-white btn-sm">GitHub</a>
-              <a href="https://c-txr.github.io/projet-footlocker/" target="_blank" rel="noopener" class="btn btn-yellow btn-sm">Visiter le site</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-img"><span class="project-ph">Data Animés</span><img src="images/projects/data-animes.jpg" alt="Graphique Matplotlib d'analyse de données animés" loading="lazy" onerror="this.remove()"></div>
-          <div class="project-body">
-            <h3>Data Analysis &amp; Feature Engineering</h3>
-            <p class="project-sub">Catalogue d'animés</p>
-            <p>Nettoyage, structuration et contrôle d'intégrité de datasets volumineux en Python avec Pandas. Élaboration d'indicateurs de performance, calcul d'un score de qualité multicritère et génération de rapports statistiques sous Jupyter.</p>
-            <div class="project-links">
-              <a href="https://github.com/Nassima203/projet-data-anime" target="_blank" rel="noopener" class="btn btn-white btn-sm">GitHub</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-img"><span class="project-ph">Solvea</span><img src="images/projects/solvea.jpg" alt="Page d'accueil de la boutique Shopify Solvea" loading="lazy" onerror="this.remove()"></div>
-          <div class="project-body">
-            <h3>Solvea</h3>
-            <p class="project-sub">Boutique E-commerce Shopify (password : solvea)</p>
-            <p>Création complète du branding (logo, charte) et de l'interface e-commerce valorisant des matériaux nobles. Déploiement du catalogue, configuration des modules de réassurance, structuration sémantique SEO et implémentation du tracking GA4 pour l'analyse des conversions.</p>
-            <div class="project-links">
-              <a href="https://solveafactory.myshopify.com/" target="_blank" rel="noopener" class="btn btn-yellow btn-sm">Visiter le site</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-img"><span class="project-ph">Moodboard</span><img src="images/projects/moodboard-creator.jpg" alt="Aperçu de l'outil Moodboard Creator" loading="lazy" onerror="this.remove()"></div>
-          <div class="project-body">
-            <h3>Moodboard Creator</h3>
-            <p class="project-sub">Application fullstack de moodboards</p>
-            <p>Développement de NASSIMOOD, un outil web pour composer des moodboards par glisser-déposer sur un canevas zoomable : images, textes, couleurs et sélecteur de polices. Back-end Node.js/Express avec authentification JWT, mots de passe chiffrés (bcrypt) et sauvegarde des projets en base SQL (libSQL), thème clair/sombre.</p>
-            <div class="project-links">
-              <a href="https://github.com/Nassima203/moodboard-creator" target="_blank" rel="noopener" class="btn btn-white btn-sm">GitHub</a>
-              <a href="https://moodboard-creator.onrender.com/" target="_blank" rel="noopener" class="btn btn-yellow btn-sm">Visiter le site</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-img"><span class="project-ph">Rénov'Score</span><img src="images/projects/renovscore.jpg" alt="Aperçu du simulateur de rénovation énergétique Rénov'Score" loading="lazy" onerror="this.remove()"></div>
-          <div class="project-body">
-            <h3>Rénov'Score</h3>
-            <p class="project-sub">Simulateur de rénovation énergétique</p>
-            <p>Maquette Figma puis développement React/Vite d'un simulateur en 3 étapes estimant les économies de chauffage, l'évolution de l'étiquette énergie (A à G) et le CO₂ évité, avec rapport détaillé. Formulaire de rappel sécurisé via une fonction serveur Vercel et Supabase (validation et recalcul côté serveur), calcul couvert par des tests unitaires lancés par GitHub Actions.</p>
-            <div class="project-links">
-              <a href="https://github.com/Nassima203/Renovscore" target="_blank" rel="noopener" class="btn btn-white btn-sm">GitHub</a>
-              <a href="https://renovscore.vercel.app" target="_blank" rel="noopener" class="btn btn-yellow btn-sm">Visiter le site</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-img"><span class="project-ph">UWatch</span><img src="images/projects/uwatch.jpg" alt="Aperçu de l'application de suivi de films et séries UWatch" loading="lazy" onerror="this.remove()"></div>
-          <div class="project-body">
-            <h3>UWatch</h3>
-            <p class="project-sub">Suivi de films &amp; séries (en cours de développement)</p>
-            <p>Application web pour suivre les films et séries vus, à voir et la progression dans les saisons. Développée en React 19 + TypeScript strict avec Vite et Tailwind CSS, authentification OAuth Google/GitHub (PKCE) via Supabase avec routes protégées, et proxy serverless Vercel vers l'API TMDB pour garder le token côté serveur. Code testé avec Vitest et React Testing Library.</p>
-            <div class="project-links">
-              <a href="https://github.com/Nassima203/movie-tracker" target="_blank" rel="noopener" class="btn btn-white btn-sm">GitHub</a>
-              <a href="https://movie-tracker-theta-seven.vercel.app/login" target="_blank" rel="noopener" class="btn btn-yellow btn-sm">Visiter le site</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-img"><span class="project-ph">Nomad Palette</span><img src="images/projects/nomad-palette.jpg" alt="Aperçu de la landing page Webflow Nomad Palette" loading="lazy" onerror="this.remove()"></div>
-          <div class="project-body">
-            <h3>Nomad Palette</h3>
-            <p class="project-sub">Landing Page &amp; Tunnel No-Code</p>
-            <p>Définition du positionnement de marque et création d'une landing page responsive sous Webflow axée sur la conversion. Automatisation complète du tunnel d'acquisition via Make, connectant des webhooks, une base Airtable et l'envoi d'e-mails dynamiques.</p>
-            <div class="project-links">
-              <a href="https://nomad-palette.webflow.io/" target="_blank" rel="noopener" class="btn btn-yellow btn-sm">Visiter le site</a>
-            </div>
-          </div>
-        </article>
-
+    <article class="card card-dark reveal">
+      <div class="project-img"><img src="images/projects/wiki-learn.jpg" alt="Capture d'écran de l'interface mobile de Wiki Learn" loading="lazy" onerror="this.remove()"></div>
+      <h3 class="card-title">Wiki Learn</h3>
+      <div class="card-foot">
+        <p class="card-kicker">Plateforme d'apprentissage gamifiée</p>
+        <p>Développement mobile-first d'une application React transformant le contenu de Wikipedia en modules d'apprentissage interactifs. Implémentation d'une logique de gamification avec calcul d'XP, badges et progression par niveaux, le tout connecté à l'API REST Wikipedia avec un déploiement continu sur Vercel.</p>
+        <div class="project-links">
+          <a href="https://github.com/Nassima203/projet-hackathon" target="_blank" rel="noopener">GitHub <svg><use href="#arrow"/></svg></a>
+          <a href="https://projet-hackathon-six.vercel.app/" target="_blank" rel="noopener">Visiter le site <svg><use href="#arrow"/></svg></a>
+        </div>
       </div>
+    </article>
 
-      <button class="carousel-btn next" type="button" aria-label="Projets suivants" data-dir="1"><svg><use href="#arrow"/></svg></button>
-    </div>
+    <article class="card card-dark reveal">
+      <div class="project-img"><img src="images/projects/explorateur-3d.jpg" alt="Rendu de la scène 3D de la pièce d'horreur" loading="lazy" onerror="this.remove()"></div>
+      <h3 class="card-title">Explorateur Immersif WebGL</h3>
+      <div class="card-foot">
+        <p class="card-kicker">Scène 3D interactive</p>
+        <p>Création d'une scène 3D immersive avec Three.js permettant d'explorer une pièce à la recherche d'indices liés à des films d'horreur. Modélisation des assets sur Blender, implémentation du raycasting pour la détection des clics, et optimisation des performances pour un affichage fluide à 60 FPS.</p>
+        <div class="project-links">
+          <a href="https://github.com/Nassima203/threejs-horreur" target="_blank" rel="noopener">GitHub <svg><use href="#arrow"/></svg></a>
+          <a href="https://threejs-horreur.vercel.app/" target="_blank" rel="noopener">Visiter le site <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-dark reveal">
+      <div class="project-img"><img src="images/projects/stk-cyanofold.jpg" alt="Aperçu du design cyanotype/blueprint de STK CyanoFold" loading="lazy" onerror="this.remove()"></div>
+      <h3 class="card-title">STK CyanoFold</h3>
+      <div class="card-foot">
+        <p class="card-kicker">Jeu sur l'architecture régénérative</p>
+        <p>Prototypage et implémentation sous React d'un jeu interactif d'association web sur le biomimétisme. Développement d'un moteur de jeu réactif avec gestion d'état local, animations CSS, et intégration de feedbacks audio/visuels immersifs.</p>
+        <div class="project-links">
+          <a href="https://github.com/Nassima203/projet_client_STK_Architecture" target="_blank" rel="noopener">GitHub <svg><use href="#arrow"/></svg></a>
+          <a href="https://stk-cyanofold.vercel.app/" target="_blank" rel="noopener">Visiter le site <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-dark reveal">
+      <div class="project-img"><img src="images/projects/foot-locker.jpg" alt="Maquette Figma de l'interface Foot Locker" loading="lazy" onerror="this.remove()"></div>
+      <h3 class="card-title">Foot Locker</h3>
+      <div class="card-foot">
+        <p class="card-kicker">Jeu Web « Instant-Gagnant »</p>
+        <p>Conception UI/UX sur Figma et développement responsive d'une interface fidèle à l'univers de la marque pour maximiser l'acquisition utilisateur. Intégration de la mécanique de tirage au sort en temps réel et création d'une bibliothèque de composants modulaires.</p>
+        <div class="project-links">
+          <a href="https://github.com/Nassima203/projet-footlocker" target="_blank" rel="noopener">GitHub <svg><use href="#arrow"/></svg></a>
+          <a href="https://c-txr.github.io/projet-footlocker/" target="_blank" rel="noopener">Visiter le site <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-dark reveal">
+      <div class="project-img"><img src="images/projects/data-animes.jpg" alt="Graphique Matplotlib d'analyse de données animés" loading="lazy" onerror="this.remove()"></div>
+      <h3 class="card-title">Data Analysis &amp; Feature Engineering</h3>
+      <div class="card-foot">
+        <p class="card-kicker">Catalogue d'animés</p>
+        <p>Nettoyage, structuration et contrôle d'intégrité de datasets volumineux en Python avec Pandas. Élaboration d'indicateurs de performance, calcul d'un score de qualité multicritère et génération de rapports statistiques sous Jupyter.</p>
+        <div class="project-links">
+          <a href="https://github.com/Nassima203/projet-data-anime" target="_blank" rel="noopener">GitHub <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-dark reveal">
+      <div class="project-img"><img src="images/projects/solvea.jpg" alt="Page d'accueil de la boutique Shopify Solvea" loading="lazy" onerror="this.remove()"></div>
+      <h3 class="card-title">Solvea</h3>
+      <div class="card-foot">
+        <p class="card-kicker">Boutique E-commerce Shopify (password : solvea)</p>
+        <p>Création complète du branding (logo, charte) et de l'interface e-commerce valorisant des matériaux nobles. Déploiement du catalogue, configuration des modules de réassurance, structuration sémantique SEO et implémentation du tracking GA4 pour l'analyse des conversions.</p>
+        <div class="project-links">
+          <a href="https://solveafactory.myshopify.com/" target="_blank" rel="noopener">Visiter le site <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-dark reveal">
+      <div class="project-img"><img src="images/projects/moodboard-creator.jpg" alt="Aperçu de l'outil Moodboard Creator" loading="lazy" onerror="this.remove()"></div>
+      <h3 class="card-title">Moodboard Creator</h3>
+      <div class="card-foot">
+        <p class="card-kicker">Application fullstack de moodboards</p>
+        <p>Développement de NASSIMOOD, un outil web pour composer des moodboards par glisser-déposer sur un canevas zoomable : images, textes, couleurs et sélecteur de polices. Back-end Node.js/Express avec authentification JWT, mots de passe chiffrés (bcrypt) et sauvegarde des projets en base SQL (libSQL), thème clair/sombre.</p>
+        <div class="project-links">
+          <a href="https://github.com/Nassima203/moodboard-creator" target="_blank" rel="noopener">GitHub <svg><use href="#arrow"/></svg></a>
+          <a href="https://moodboard-creator.onrender.com/" target="_blank" rel="noopener">Visiter le site <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-dark reveal">
+      <div class="project-img"><img src="images/projects/renovscore.jpg" alt="Aperçu du simulateur de rénovation énergétique Rénov'Score" loading="lazy" onerror="this.remove()"></div>
+      <h3 class="card-title">Rénov'Score</h3>
+      <div class="card-foot">
+        <p class="card-kicker">Simulateur de rénovation énergétique</p>
+        <p>Maquette Figma puis développement React/Vite d'un simulateur en 3 étapes estimant les économies de chauffage, l'évolution de l'étiquette énergie (A à G) et le CO₂ évité, avec rapport détaillé. Formulaire de rappel sécurisé via une fonction serveur Vercel et Supabase (validation et recalcul côté serveur), calcul couvert par des tests unitaires lancés par GitHub Actions.</p>
+        <div class="project-links">
+          <a href="https://github.com/Nassima203/Renovscore" target="_blank" rel="noopener">GitHub <svg><use href="#arrow"/></svg></a>
+          <a href="https://renovscore.vercel.app" target="_blank" rel="noopener">Visiter le site <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-dark reveal">
+      <div class="project-img"><img src="images/projects/uwatch.jpg" alt="Aperçu de l'application de suivi de films et séries UWatch" loading="lazy" onerror="this.remove()"></div>
+      <h3 class="card-title">UWatch</h3>
+      <div class="card-foot">
+        <p class="card-kicker">Suivi de films &amp; séries (en cours de développement)</p>
+        <p>Application web pour suivre les films et séries vus, à voir et la progression dans les saisons. Développée en React 19 + TypeScript strict avec Vite et Tailwind CSS, authentification OAuth Google/GitHub (PKCE) via Supabase avec routes protégées, et proxy serverless Vercel vers l'API TMDB pour garder le token côté serveur. Code testé avec Vitest et React Testing Library.</p>
+        <div class="project-links">
+          <a href="https://github.com/Nassima203/movie-tracker" target="_blank" rel="noopener">GitHub <svg><use href="#arrow"/></svg></a>
+          <a href="https://movie-tracker-theta-seven.vercel.app/login" target="_blank" rel="noopener">Visiter le site <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-dark reveal">
+      <div class="project-img"><img src="images/projects/rdv-api.jpg" alt="Aperçu de la documentation interactive de l'API de prise de rendez-vous" loading="lazy" onerror="this.remove()"></div>
+      <h3 class="card-title">API de prise de rendez-vous</h3>
+      <div class="card-foot">
+        <p class="card-kicker">API REST en Python (FastAPI)</p>
+        <p>Conception d'une API pour réserver des rendez-vous chez un professionnel : consultation des créneaux libres, réservation, déplacement et annulation. Persistance SQLite via SQLModel, validation des données avec Pydantic (email, téléphone français, créneaux horaires), règles métier (créneau déjà pris refusé, modification impossible moins de 24 h avant) et erreurs uniformisées en français. Documentation interactive générée automatiquement et 13 tests automatisés avec pytest.</p>
+        <div class="project-links">
+          <a href="https://github.com/Nassima203/rdv-api" target="_blank" rel="noopener">GitHub <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-dark reveal">
+      <div class="project-img"><img src="images/projects/nomad-palette.jpg" alt="Aperçu de la landing page Webflow Nomad Palette" loading="lazy" onerror="this.remove()"></div>
+      <h3 class="card-title">Nomad Palette</h3>
+      <div class="card-foot">
+        <p class="card-kicker">Landing Page &amp; Tunnel No-Code</p>
+        <p>Définition du positionnement de marque et création d'une landing page responsive sous Webflow axée sur la conversion. Automatisation complète du tunnel d'acquisition via Make, connectant des webhooks, une base Airtable et l'envoi d'e-mails dynamiques.</p>
+        <div class="project-links">
+          <a href="https://nomad-palette.webflow.io/" target="_blank" rel="noopener">Visiter le site <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <a href="#contact" class="card card-dark card-cta reveal">
+      <h3 class="card-title">Un espace pour votre projet</h3>
+      <div class="card-foot">
+        <p>Écrivez-moi, on en parle <svg><use href="#arrow"/></svg></p>
+      </div>
+    </a>
+
   </div>
 </section>
 
 <!-- ===== CONTACT ===== -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="panel contact-panel reveal">
-      <svg class="sparkle sp-5" aria-hidden="true"><use href="#sparkle"/></svg>
-      <svg class="sparkle sp-6" aria-hidden="true"><use href="#sparkle"/></svg>
-      <span class="sticker sticker-red sticker-oval contact-sticker-1">Hello !</span>
-      <span class="sticker sticker-green sticker-oval contact-sticker-2">Let's go</span>
+<section class="section" id="contact">
+  <h2 class="label reveal">(contact)</h2>
 
-      <div class="contact-info">
-        <h2 class="section-title">Travaillons ensemble !</h2>
-        <p>Vous avez un projet en tête ou une opportunité à proposer ? N'hésitez pas à m'envoyer un message, je réponds vite.</p>
-        <div class="contact-socials">
-          <a href="mailto:nassimaadli777@gmail.com" class="icon-btn" aria-label="Gmail">
-            <svg viewBox="0 0 24 24"><path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11A2.5 2.5 0 0 1 19.5 20h-15A2.5 2.5 0 0 1 2 17.5v-11Zm2.2.3 7.4 5.6a.8.8 0 0 0 .8 0l7.4-5.6H4.2Zm15.6 1.4-7 5.3a2.8 2.8 0 0 1-3.6 0l-7-5.3v9.3c0 .28.22.5.5.5h15c.28 0 .5-.22.5-.5V8.2Z"/></svg>
-          </a>
-          <a href="https://github.com/Nassima203/" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5v-1.9c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.34 1.12 2.92.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.13-4.56-5.02 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.72 0 0 .84-.28 2.75 1.04a9.4 9.4 0 0 1 5 0c1.9-1.32 2.75-1.04 2.75-1.04.55 1.42.2 2.46.1 2.72.64.71 1.03 1.62 1.03 2.73 0 3.9-2.34 4.76-4.57 5.01.36.32.68.94.68 1.9v2.82c0 .28.18.61.69.5C19.14 20.62 22 16.77 22 12.25 22 6.58 17.52 2 12 2Z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/nassima-adli-60a78135b/" target="_blank" rel="noopener" class="icon-btn" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm7 0h3.8v1.57h.05c.53-.98 1.83-2.02 3.77-2.02 4.03 0 4.78 2.58 4.78 5.93V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21h-3.98V9.5Z"/></svg>
-          </a>
+  <div class="contact reveal">
+    <div class="contact-info">
+      <h3 class="contact-title">Travaillons ensemble !</h3>
+      <p>Vous avez un projet en tête ou une opportunité à proposer ? N'hésitez pas à m'envoyer un message, je réponds vite.</p>
+      <ul class="contact-links">
+        <li><a href="mailto:nassimaadli777@gmail.com">Email <svg><use href="#arrow"/></svg></a></li>
+        <li><a href="https://github.com/Nassima203/" target="_blank" rel="noopener">GitHub <svg><use href="#arrow"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/nassima-adli-60a78135b/" target="_blank" rel="noopener">LinkedIn <svg><use href="#arrow"/></svg></a></li>
+      </ul>
+    </div>
+
+    <form class="contact-form" id="contactForm" data-endpoint="https://formsubmit.co/ajax/nassimaadli777@gmail.com">
+      <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="name">Nom &amp; Prénom</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom complet" autocomplete="name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Adresse e-mail</label>
+          <input type="email" id="email" name="email" placeholder="vous@exemple.com" autocomplete="email" required>
         </div>
       </div>
-
-      <form class="contact-form" id="contactForm" data-endpoint="https://formsubmit.co/ajax/nassimaadli777@gmail.com">
-        <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="form-grid">
-          <div class="form-row">
-            <label for="name">Nom &amp; Prénom</label>
-            <input type="text" id="name" name="name" placeholder="Votre nom complet" autocomplete="name" required>
-          </div>
-          <div class="form-row">
-            <label for="email">Adresse e-mail</label>
-            <input type="email" id="email" name="email" placeholder="vous@exemple.com" autocomplete="email" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <label for="objet">Objet du message</label>
-          <input type="text" id="objet" name="objet" placeholder="Objet de votre message" required>
-        </div>
-        <div class="form-row">
-          <label for="message">Votre message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-yellow btn-full">Envoyer le message</button>
-        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-      </form>
-    </div>
+      <div class="form-row">
+        <label for="objet">Objet du message</label>
+        <input type="text" id="objet" name="objet" placeholder="Objet de votre message" required>
+      </div>
+      <div class="form-row">
+        <label for="message">Votre message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark">Envoyer le message</button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
@@ -415,32 +379,21 @@
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
-  <div class="container">
-    <div class="panel footer-panel">
-      <div class="footer-top">
-        <div>
-          <a href="#accueil" class="logo">Nassima<span>.</span>Adli</a>
-          <p class="footer-tag">Code. Design. Repeat.</p>
-        </div>
-        <a href="#contact" class="footer-cta">Me contacter <span class="round-arrow"><svg><use href="#arrow"/></svg></span></a>
-      </div>
-      <div class="footer-bottom">
-        <div class="contact-socials small">
-          <a href="mailto:nassimaadli777@gmail.com" class="icon-btn" aria-label="Gmail">
-            <svg viewBox="0 0 24 24"><path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11A2.5 2.5 0 0 1 19.5 20h-15A2.5 2.5 0 0 1 2 17.5v-11Zm2.2.3 7.4 5.6a.8.8 0 0 0 .8 0l7.4-5.6H4.2Zm15.6 1.4-7 5.3a2.8 2.8 0 0 1-3.6 0l-7-5.3v9.3c0 .28.22.5.5.5h15c.28 0 .5-.22.5-.5V8.2Z"/></svg>
-          </a>
-          <a href="https://github.com/Nassima203" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5v-1.9c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.34 1.12 2.92.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.13-4.56-5.02 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.72 0 0 .84-.28 2.75 1.04a9.4 9.4 0 0 1 5 0c1.9-1.32 2.75-1.04 2.75-1.04.55 1.42.2 2.46.1 2.72.64.71 1.03 1.62 1.03 2.73 0 3.9-2.34 4.76-4.57 5.01.36.32.68.94.68 1.9v2.82c0 .28.18.61.69.5C19.14 20.62 22 16.77 22 12.25 22 6.58 17.52 2 12 2Z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/nassima-adli-60a78135b/" target="_blank" rel="noopener" class="icon-btn" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm7 0h3.8v1.57h.05c.53-.98 1.83-2.02 3.77-2.02 4.03 0 4.78 2.58 4.78 5.93V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21h-3.98V9.5Z"/></svg>
-          </a>
-        </div>
-        <p class="footer-copy">© 2026 Nassima Adli. Tous droits réservés.</p>
-      </div>
+  <div class="footer-top">
+    <p class="footer-name">Nassima Adli</p>
+    <p class="footer-tag">(Code. Design. Repeat.)</p>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Nassima Adli. Tous droits réservés.</p>
+    <div class="footer-links">
+      <a href="mailto:nassimaadli777@gmail.com">Gmail</a>
+      <a href="https://github.com/Nassima203" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/nassima-adli-60a78135b/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </footer>
+
+</div>
 
 <script src="js/script.js"></script>
 </body>
