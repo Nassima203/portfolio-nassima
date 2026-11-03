@@ -307,13 +307,14 @@
     </article>
 
     <article class="card card-dark reveal">
-      <div class="project-img"><img src="images/projects/rdv-api.jpg" alt="Aperçu de la documentation interactive de l'API de prise de rendez-vous" loading="lazy" onerror="this.remove()"></div>
-      <h3 class="card-title">API de prise de rendez-vous</h3>
+      <div class="project-img"><img src="images/projects/rdv-api.jpg" alt="Aperçu du site de réservation Maison Lumen relié à l'API de prise de rendez-vous" loading="lazy" onerror="this.remove()"></div>
+      <h3 class="card-title">Maison Lumen · API de rendez-vous</h3>
       <div class="card-foot">
-        <p class="card-kicker">API REST en Python (FastAPI)</p>
-        <p>Conception d'une API pour réserver des rendez-vous chez un professionnel : consultation des créneaux libres, réservation, déplacement et annulation. Persistance SQLite via SQLModel, validation des données avec Pydantic (email, téléphone français, créneaux horaires), règles métier (créneau déjà pris refusé, modification impossible moins de 24 h avant) et erreurs uniformisées en français. Documentation interactive générée automatiquement et 13 tests automatisés avec pytest.</p>
+        <p class="card-kicker">API Python (FastAPI) &amp; site Webflow</p>
+        <p>API FastAPI de prise de rendez-vous pour Maison Lumen, un salon de coiffure fictif, branchée sur un site vitrine Webflow via un module JavaScript intégré (réservation côté cliente, espace salon pour l'administratrice). Créneaux libres en direct, validation Pydantic, règles métier (créneau déjà pris refusé, modification impossible moins de 24 h avant), erreurs en français et emails de confirmation via un relais Google Apps Script. Sécurisée par clé admin, jeton par rendez-vous, limite de requêtes et CORS, déployée sur Render avec PostgreSQL et couverte par 50 tests pytest.</p>
         <div class="project-links">
           <a href="https://github.com/Nassima203/rdv-api" target="_blank" rel="noopener">GitHub <svg><use href="#arrow"/></svg></a>
+          <a href="https://maison-lumen-c4b75a.webflow.io" target="_blank" rel="noopener">Visiter le site <svg><use href="#arrow"/></svg></a>
         </div>
       </div>
     </article>
