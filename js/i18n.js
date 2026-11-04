@@ -109,6 +109,12 @@ const EN = {
   "Définition du positionnement de marque et création d'une landing page responsive sous Webflow axée sur la conversion. Automatisation complète du tunnel d'acquisition via Make, connectant des webhooks, une base Airtable et l'envoi d'e-mails dynamiques.":
     'I defined the brand positioning and designed a responsive, conversion-focused landing page in Webflow, then fully automated the acquisition funnel with Make, linking webhooks, an Airtable base and personalized emails.',
 
+  "Aperçu du scénario Make de l'assistant de tri d'e-mails": 'Preview of the Make scenario behind the email sorting assistant',
+  "Assistant de tri d'e-mails": 'Email Sorting Assistant',
+  'Agent IA avec Make & Claude': 'AI agent with Make & Claude',
+  "Agent qui lit des e-mails depuis Google Sheets, les classe par catégorie et priorité, les résume, propose l'action à faire et rédige un brouillon de réponse, sans jamais envoyer seul. Scénario Make relié à Claude (Anthropic) avec un prompt imposant une sortie JSON, un champ « doute » quand l'agent hésite et une règle anti-invention. Évalué sur 10 e-mails de test : 8/10 catégories correctes, et les 2 erreurs signalées par l'agent lui-même.":
+    'An agent that reads emails from Google Sheets, sorts them by category and priority, summarizes them, suggests the next action and drafts a reply, but never sends anything on its own. A Make scenario connected to Claude (Anthropic), with a prompt that enforces JSON output, a "doubt" flag when the agent is unsure and a no-invention rule. Tested on 10 sample emails: 8/10 categories correct, and the agent flagged both of its own mistakes.',
+
   'Un espace pour votre projet': 'Your project could be next',
   'Écrivez-moi, on en parle': "Drop me a line, let's talk",
 
