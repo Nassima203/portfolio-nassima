@@ -54,66 +54,66 @@ const EN = {
 
   "Capture d'écran de l'interface mobile de Wiki Learn": 'Screenshot of the Wiki Learn mobile interface',
   "Plateforme d'apprentissage gamifiée": 'A gamified learning platform',
-  "Développement mobile-first d'une application React transformant le contenu de Wikipedia en modules d'apprentissage interactifs. Implémentation d'une logique de gamification avec calcul d'XP, badges et progression par niveaux, le tout connecté à l'API REST Wikipedia avec un déploiement continu sur Vercel.":
-    'A mobile-first React app that turns Wikipedia articles into interactive learning modules. It features gamification with XP, badges and level progression, runs on the Wikipedia REST API and is continuously deployed on Vercel.',
+  "Application React qui transforme des articles Wikipedia en modules d'apprentissage, avec XP, badges et niveaux.":
+    "A React app that turns Wikipedia articles into learning modules, with XP, badges and levels.",
 
   "Rendu de la scène 3D de la pièce d'horreur": '3D render of the horror-themed room',
   'Explorateur Immersif WebGL': 'Immersive WebGL Explorer',
   'Scène 3D interactive': 'An interactive 3D scene',
-  "Création d'une scène 3D immersive avec Three.js permettant d'explorer une pièce à la recherche d'indices liés à des films d'horreur. Modélisation des assets sur Blender, implémentation du raycasting pour la détection des clics, et optimisation des performances pour un affichage fluide à 60 FPS.":
-    'An immersive Three.js scene where you search a room for clues hidden from classic horror films. Assets modeled in Blender, raycasting for click detection, and performance tuned for a smooth 60 FPS.',
+  "Pièce en 3D à explorer pour trouver des indices de films d'horreur. Three.js et Blender.":
+    "A 3D room to explore in search of clues from horror films. Three.js and Blender.",
 
   'Aperçu du design cyanotype/blueprint de STK CyanoFold': 'Preview of the cyanotype-inspired blueprint design of STK CyanoFold',
   "Jeu sur l'architecture régénérative": 'A game about regenerative architecture',
-  "Prototypage et implémentation sous React d'un jeu interactif d'association web sur le biomimétisme. Développement d'un moteur de jeu réactif avec gestion d'état local, animations CSS, et intégration de feedbacks audio/visuels immersifs.":
-    'An interactive matching game about biomimicry, taken from prototype to finished build in React. It runs on a custom game engine with local state management, CSS animations and immersive sound and visual feedback.',
+  "Jeu d'association en React sur le biomimétisme, avec animations et retours sonores.":
+    "A React matching game about biomimicry, with animations and sound feedback.",
 
   "Maquette Figma de l'interface Foot Locker": 'Figma mockup of the Foot Locker interface',
   'Jeu Web « Instant-Gagnant »': 'An “Instant Win” web game',
-  "Conception UI/UX sur Figma et développement responsive d'une interface fidèle à l'univers de la marque pour maximiser l'acquisition utilisateur. Intégration de la mécanique de tirage au sort en temps réel et création d'une bibliothèque de composants modulaires.":
-    "UI/UX design in Figma and a responsive build that stays true to the brand's identity, designed to attract as many players as possible. Includes a real-time prize draw and a library of reusable components.",
+  "Jeu de tirage au sort aux couleurs de la marque, conçu sur Figma puis développé en responsive.":
+    "A brand-styled prize-draw game, designed in Figma and built to be responsive.",
 
   "Graphique Matplotlib d'analyse de données animés": 'Matplotlib chart from the anime data analysis',
   "Catalogue d'animés": 'An anime catalog',
-  "Nettoyage, structuration et contrôle d'intégrité de datasets volumineux en Python avec Pandas. Élaboration d'indicateurs de performance, calcul d'un score de qualité multicritère et génération de rapports statistiques sous Jupyter.":
-    'Cleaning, structuring and validating large datasets in Python with Pandas. I designed key performance indicators, a multi-criteria quality score and statistical reports in Jupyter.',
+  "Nettoyage et analyse d'un catalogue d'animés en Python (Pandas), avec un score de qualité et des graphiques.":
+    "Cleaning and analysis of an anime catalog in Python (Pandas), with a quality score and charts.",
 
   "Page d'accueil de la boutique Shopify Solvea": 'Homepage of the Solvea Shopify store',
   'Boutique E-commerce Shopify (password : solvea)': 'A Shopify online store (password: solvea)',
-  "Création complète du branding (logo, charte) et de l'interface e-commerce valorisant des matériaux nobles. Déploiement du catalogue, configuration des modules de réassurance, structuration sémantique SEO et implémentation du tracking GA4 pour l'analyse des conversions.":
-    'End-to-end branding (logo and visual identity) and an online store that showcases premium materials. I set up the product catalog and trust signals, built an SEO-friendly structure and added GA4 tracking to measure conversions.',
+  "Boutique Shopify de matériaux nobles : branding complet, catalogue, SEO et suivi GA4.":
+    "A Shopify store for premium materials: full branding, product catalog, SEO and GA4 tracking.",
 
   "Aperçu de l'outil Moodboard Creator": 'Preview of the Moodboard Creator tool',
   'Application fullstack de moodboards': 'A full-stack moodboard app',
-  'Développement de NASSIMOOD, un outil web pour composer des moodboards par glisser-déposer sur un canevas zoomable : images, textes, couleurs et sélecteur de polices. Back-end Node.js/Express avec authentification JWT, mots de passe chiffrés (bcrypt) et sauvegarde des projets en base SQL (libSQL), thème clair/sombre.':
-    'NASSIMOOD lets you build moodboards by dragging images, text, colors and fonts onto a zoomable canvas. The Node.js/Express back end handles JWT authentication, bcrypt-hashed passwords and saving projects to a SQL database (libSQL), with light and dark themes.',
+  "Outil pour composer des moodboards par glisser-déposer, avec comptes utilisateurs et sauvegarde des projets. Node.js, Express et SQL.":
+    "A drag-and-drop moodboard builder with user accounts and saved projects. Node.js, Express and SQL.",
 
   "Aperçu du simulateur de rénovation énergétique Rénov'Score": "Preview of the Rénov'Score energy renovation simulator",
   'Simulateur de rénovation énergétique': 'An energy renovation simulator',
-  "Maquette Figma puis développement React/Vite d'un simulateur en 3 étapes estimant les économies de chauffage, l'évolution de l'étiquette énergie (A à G) et le CO₂ évité, avec rapport détaillé. Formulaire de rappel sécurisé via une fonction serveur Vercel et Supabase (validation et recalcul côté serveur), calcul couvert par des tests unitaires lancés par GitHub Actions.":
-    'Designed in Figma, then built with React and Vite: a three-step simulator that estimates heating savings, the new energy rating (A to G) and the CO₂ saved, with a detailed report. A secure callback form runs through a Vercel serverless function and Supabase, which validate and recalculate everything server-side, and the calculations are covered by unit tests in GitHub Actions.',
+  "Simulateur qui estime les économies de chauffage, la nouvelle étiquette énergie et le CO₂ évité. Maquette Figma, puis React, Vercel et Supabase.":
+    "A simulator that estimates heating savings, the new energy rating and the CO₂ saved. Designed in Figma, built with React, Vercel and Supabase.",
 
   "Aperçu de l'application de suivi de films et séries UWatch": 'Preview of UWatch, a movie and TV show tracker',
   'Suivi de films & séries (en cours de développement)': 'A movie & TV tracker (work in progress)',
-  "Application web pour suivre les films et séries vus, à voir et la progression dans les saisons. Développée en React 19 + TypeScript strict avec Vite et Tailwind CSS, authentification OAuth Google/GitHub (PKCE) via Supabase avec routes protégées, et proxy serverless Vercel vers l'API TMDB pour garder le token côté serveur. Code testé avec Vitest et React Testing Library.":
-    "A web app to keep track of what you've watched, what's next on your list and how far you are into each season. Built with React 19, strict TypeScript, Vite and Tailwind CSS, with Google/GitHub sign-in (OAuth PKCE) through Supabase, protected routes, and a Vercel serverless proxy to the TMDB API that keeps the token off the client. Tested with Vitest and React Testing Library.",
+  "Application pour suivre ses films et séries, vus ou à voir. React, TypeScript et Supabase, avec connexion Google/GitHub et l'API TMDB.":
+    "An app to track the movies and shows you've watched or want to watch. React, TypeScript and Supabase, with Google/GitHub sign-in and the TMDB API.",
 
   "Aperçu du site de réservation Maison Lumen relié à l'API de prise de rendez-vous": 'Preview of the Maison Lumen booking site, powered by the appointment API',
   'Maison Lumen · API de rendez-vous': 'Maison Lumen · Booking API',
   'API Python (FastAPI) & site Webflow': 'Python API (FastAPI) & Webflow site',
-  "API FastAPI de prise de rendez-vous pour Maison Lumen, un salon de coiffure fictif, branchée sur un site vitrine Webflow via un module JavaScript intégré (réservation côté cliente, espace salon pour l'administratrice). Créneaux libres en direct, validation Pydantic, règles métier (créneau déjà pris refusé, modification impossible moins de 24 h avant), erreurs en français et emails de confirmation via un relais Google Apps Script. Sécurisée par clé admin, jeton par rendez-vous, limite de requêtes et CORS, déployée sur Render avec PostgreSQL et couverte par 50 tests pytest.":
-    'A FastAPI booking API for Maison Lumen, a fictional hair salon, connected to a Webflow showcase site through an embedded JavaScript module (client booking page and an admin area for the salon). Live open slots, Pydantic validation, business rules (no double bookings, no changes within 24 hours) and French error messages, plus confirmation emails sent through a Google Apps Script relay. Secured with an admin key, a per-appointment token, rate limiting and CORS, deployed on Render with PostgreSQL and covered by 50 pytest tests.',
+  "API de réservation pour un salon de coiffure fictif, reliée à un site Webflow. FastAPI et PostgreSQL, déployée sur Render et couverte par 50 tests.":
+    "A booking API for a fictional hair salon, connected to a Webflow site. FastAPI and PostgreSQL, deployed on Render and covered by 50 tests.",
 
   'Aperçu de la landing page Webflow Nomad Palette': 'Preview of the Nomad Palette landing page on Webflow',
   'Landing Page & Tunnel No-Code': 'Landing page & no-code funnel',
-  "Définition du positionnement de marque et création d'une landing page responsive sous Webflow axée sur la conversion. Automatisation complète du tunnel d'acquisition via Make, connectant des webhooks, une base Airtable et l'envoi d'e-mails dynamiques.":
-    'I defined the brand positioning and designed a responsive, conversion-focused landing page in Webflow, then fully automated the acquisition funnel with Make, linking webhooks, an Airtable base and personalized emails.',
+  "Landing page Webflow pensée pour la conversion, avec un tunnel d'inscription automatisé via Make, Airtable et des e-mails personnalisés.":
+    "A conversion-focused Webflow landing page, with a sign-up funnel automated through Make, Airtable and personalized emails.",
 
   "Aperçu du scénario Make de l'assistant de tri d'e-mails": 'Preview of the Make scenario behind the email sorting assistant',
   "Assistant de tri d'e-mails": 'Email Sorting Assistant',
   'Agent IA avec Make & Claude': 'AI agent with Make & Claude',
-  "Agent qui lit des e-mails depuis Google Sheets, les classe par catégorie et priorité, les résume, propose l'action à faire et rédige un brouillon de réponse, sans jamais envoyer seul. Scénario Make relié à Claude (Anthropic) avec un prompt imposant une sortie JSON, un champ « doute » quand l'agent hésite et une règle anti-invention. Évalué sur 10 e-mails de test : 8/10 catégories correctes, et les 2 erreurs signalées par l'agent lui-même.":
-    'An agent that reads emails from Google Sheets, sorts them by category and priority, summarizes them, suggests the next action and drafts a reply, but never sends anything on its own. A Make scenario connected to Claude (Anthropic), with a prompt that enforces JSON output, a "doubt" flag when the agent is unsure and a no-invention rule. Tested on 10 sample emails: 8/10 categories correct, and the agent flagged both of its own mistakes.',
+  "Agent IA qui trie, résume et prépare une réponse à chaque e-mail, sans rien envoyer seul. Make, Google Sheets et Claude.":
+    "An AI agent that sorts, summarizes and drafts a reply to each email, without ever sending anything on its own. Make, Google Sheets and Claude.",
 
   'Un espace pour votre projet': 'Your project could be next',
   'Écrivez-moi, on en parle': "Drop me a line, let's talk",
