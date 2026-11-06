@@ -42,9 +42,10 @@ const EN = {
   'Traitement, structuration et connexion des données.': 'Processing, structuring and connecting data.',
   "L'oeil design": 'An eye for design',
   'Du prototype au tunnel de conversion optimisé.': 'From first prototype to a fine-tuned conversion funnel.',
-  'DevOps & Automatisation': 'DevOps & Automation',
+  'DevOps, IA & Automatisation': 'DevOps, AI & Automation',
   "L'automatisation": 'Working smarter',
-  'Déploiement continu et workflows automatisés.': 'Continuous deployment and automated workflows.',
+  "Tests, déploiement continu et workflows automatisés avec l'IA.": 'Testing, continuous deployment and AI-powered automated workflows.',
+  'RGPD': 'GDPR',
   'Voir mes projets': 'View my work',
 
   // Projets
