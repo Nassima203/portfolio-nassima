@@ -45,7 +45,6 @@ const EN = {
   'DevOps, IA & Automatisation': 'DevOps, AI & Automation',
   "L'automatisation": 'Working smarter',
   "Tests, déploiement continu et workflows automatisés avec l'IA.": 'Testing, continuous deployment and AI-powered automated workflows.',
-  'RGPD': 'GDPR',
   'Voir mes projets': 'View my work',
 
   // Projets
