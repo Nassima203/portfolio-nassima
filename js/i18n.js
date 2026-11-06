@@ -70,8 +70,8 @@ const EN = {
 
   "Maquette Figma de l'interface Foot Locker": 'Figma mockup of the Foot Locker interface',
   'Jeu Web « Instant-Gagnant »': 'An “Instant Win” web game',
-  "Jeu de tirage au sort aux couleurs de la marque, conçu sur Figma puis développé en responsive.":
-    "A brand-styled prize-draw game, designed in Figma and built to be responsive.",
+  "Jeu Instant-Gagnant pensé à partir d'un brief client réel : wireframes et user flows sur Figma, puis intégration en HTML et CSS.":
+    "An Instant Win game based on a real client brief: wireframes and user flows in Figma, then built in HTML and CSS.",
 
   "Graphique Matplotlib d'analyse de données animés": 'Matplotlib chart from the anime data analysis',
   "Catalogue d'animés": 'An anime catalog',
@@ -103,6 +103,11 @@ const EN = {
   'API Python (FastAPI) & site Webflow': 'Python API (FastAPI) & Webflow site',
   "API de réservation pour un salon de coiffure fictif, reliée à un site Webflow. FastAPI et PostgreSQL, déployée sur Render et couverte par 50 tests.":
     "A booking API for a fictional hair salon, connected to a Webflow site. FastAPI and PostgreSQL, deployed on Render and covered by 50 tests.",
+
+  "Aperçu du tableau de bord de l'application de productivité TODO-GO": 'Preview of the TODO-GO productivity app dashboard',
+  'Application de productivité en React': 'A productivity app in React',
+  "Application de productivité avec Kanban, calendrier, minuteur Pomodoro et notes. React, Vite et Tailwind CSS, avec Firebase pour les comptes et les données.":
+    "A productivity app with a Kanban board, calendar, Pomodoro timer and notes. Built with React, Vite and Tailwind CSS, with Firebase for accounts and data.",
 
   'Aperçu de la landing page Webflow Nomad Palette': 'Preview of the Nomad Palette landing page on Webflow',
   'Landing Page & Tunnel No-Code': 'Landing page & no-code funnel',
